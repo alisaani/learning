@@ -1,13 +1,6 @@
-(defun onion(x y)
-	(cond 
-		((> x 0) (list(onion  (- x 1) y)))
-		( t y)
-	)
-)
+ЛАБОРАТОРНАЯ #2
 
-(trace onion)
-(onion 5 '*)
-
+3. Функция, заменяющаю в списке все вхождения x на y.
 (defun chh(x y z)
 	(cond 
 		((null z) nil)
@@ -19,15 +12,26 @@
 (trace chh)
 (chh 5 '* '(1 5 5 4 5 6 7))
 
-
-(defun copy1 (l)
-	(cond
-		((null l) l)
-		
-		(t (list (copy (cdr l)) (car l) ))
+6.  Функция, строящая список "луковица" с уровнем вложенности n для параметра x.
+(defun onion(x y)
+	(cond 
+		((> x 0) (list(onion  (- x 1) y)))
+		( t y)
 	)
 )
 
+(trace onion)
+(onion 5 '*)
+
+15.  Функция, преобразующая список по следующему правилу: (a s d f g) –> (((((a) s) d) f) g).
+(defun copy1 (l)
+	(cond
+		((null l) l)
+		(t (list (copy1 (cdr l)) (car l) ))
+	)
+)
+
+*. Функция копирования
 (defun copy (l)
 	(cond
 		((null l) nil)
@@ -36,17 +40,12 @@
 	)
 )
 
-
 (trace copy)
 (copy '(1 2 3 4))
 
 
-(defun del (l1 l2 &optional z3)
-	(cond
-		(
-
-)))
-
+ЛАБОРАТОРНАЯ #3
+3. Функция, пpеобpазующаю инфиксную запись выpажения в пpединфиксную и возвpащающую значение выpажения
 (defun inf-pref(l)
   (cond 
     ((null l) nil)
